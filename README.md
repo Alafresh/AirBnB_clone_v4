@@ -217,7 +217,12 @@ github repo
 * Kimberly Wong, [kjowong](https://github.com/kjowong) | [@kjowong](https://twitter.com/kjowong) | [kjowong@gmail.com](kjowong@gmail.com)
 * Carrie Ybay, [hicarrie](https://github.com/hicarrie) | [@hicarrie_](https://twitter.com/hicarrie_)
 * Jared Heck, [jarehec](https://github.com/jarehec) | [@jarehec](https://twitter.com/jarehec)
-
+* Camilo Villegas [LinkedIn](https://www.linkedin.com/in/camilovj/)
+  [Medium](https://medium.com/@mrdoom)
+  [Github](https://github.com/mrdoomus)
+* Juan Guillermo Caicedo [LinkedIn](www.linkedin.com/in/JuanGCC)
+  [Twitter](https://twitter.com/Alafresh1)
+  [Github](https://github.com/Alafresh)
 ## License
 
 MIT License
