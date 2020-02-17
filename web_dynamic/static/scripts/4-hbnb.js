@@ -1,5 +1,5 @@
 // script 2
-$.ajax ({
+$.ajax({
   type: 'GET',
   url: 'http://0.0.0.0:5001/api/v1/status/',
   statusCode: {
@@ -36,41 +36,46 @@ $(document).ready(function () {
   });
 });
 
-// script 4
-$('.filters button').click( function () {
-  console.log('GIGI PUTO');
-  $.ajax ({
-    type: 'POST',
-    url: 'http://0.0.0.0:5001/api/v1/places_search/',
-    contentType: "application/json",
-    data: JSON.stringify({ amenities: arrayId })}).done(function(data) {
-      for (let place of data) {
+$(document).ready(function () {
+  $('.filters button').click(function () {
+    console.log('CLICK');
+    console.log(arrayId);
+    $.ajax({
+      type: 'POST',
+      url: 'http://0.0.0.0:5001/api/v1/places_search/',
+      contentType: 'application/json',
+      data: JSON.stringify({ amenities: arrayId })
+    }).done(data => {
+      $('section.places').empty();
+      $('section.places').append('<h1>Places</h1>');
+      for (const place of data) {
         $('section.places').append(
-        `<article>
-        <div class="title">
-          <h2>`+ place.name +`</h2>
-          <div class="price_by_night">
-          `+ place.price_by_night +`
+          `<article>
+          <div class="title">
+            <h2>` + place.name + `</h2>
+            <div class="price_by_night">
+            ` + place.price_by_night + `
+            </div>
           </div>
-        </div>
-        <div class="information">
-          <div class="max_guest">
-      <i class="fa fa-users fa-3x" aria-hidden="true"></i>
-      ` + place.max_guest + `Guests
+          <div class="information">
+            <div class="max_guest">
+        <i class="fa fa-users fa-3x" aria-hidden="true"></i>
+        ` + place.max_guest + `Guests
+            </div>
+            <div class="number_rooms">
+        <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+        ` + place.number_rooms + `Bedrooms
+            </div>
+            <div class="number_bathrooms">
+        <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+        ` + place.number_bathrooms + `Bathroom
+            </div>
           </div>
-          <div class="number_rooms">
-      <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
-      ` + place.number_rooms + `Bedrooms
-          </div>
-          <div class="number_bathrooms">
-      <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
-      ` + place.number_bathrooms + `Bathroom
-          </div>
-        </div>
-        <div class="description">
-          ` + place.description + `
-          </div>
-        </article>`);
-        }
+          <div class="description">
+            ` + place.description + `
+            </div>
+          </article>`);
+      }
     });
   });
+});
