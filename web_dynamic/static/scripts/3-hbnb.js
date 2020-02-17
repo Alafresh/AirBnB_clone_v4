@@ -1,15 +1,16 @@
-$.ajax ({
+$.ajax({
   type: 'POST',
   url: 'http://0.0.0.0:5001/api/v1/places_search/',
-  contentType: "application/json",
-  data: JSON.stringify({})}).done(function(data) {
-    for (let place of data) {
-      $('section.places').append(
+  contentType: 'application/json',
+  data: JSON.stringify({})
+}).done(function (data) {
+  for (const place of data) {
+    $('section.places').append(
       `<article>
       <div class="title">
-        <h2>`+ place.name +`</h2>
+        <h2>` + place.name + `</h2>
         <div class="price_by_night">
-         `+ place.price_by_night +`
+         ` + place.price_by_night + `
         </div>
       </div>
       <div class="information">
@@ -30,5 +31,5 @@ $.ajax ({
         ` + place.description + `
         </div>
       </article>`);
-      }
-  });
+  }
+});
